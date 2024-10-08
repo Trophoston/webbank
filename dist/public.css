@@ -1,0 +1,46 @@
+@font-face {
+     font-family: line;
+     src: url("../plugin/font/WOFF/LINESeedSansTH_W_Rg.woff") format("woff");
+}
+
+body{
+     margin: 0;
+     padding: 0;
+     padding-top: 70px;
+     min-height: 1020vh;
+     font-family: line;
+}
+
+nav{
+     height: 70px;
+     position: fixed !important;
+     top: 0;
+     left: 0;
+     width: 100%;
+}
+
+.nav-img{
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+}
+
+a{
+     color: black;
+     text-decoration: none;
+}
+
+.h-r-90{
+     transition: ease .3s;
+}
+
+.h-r-90:hover {
+     transform: rotate(90deg);
+ }
+
+ .h-s-105{
+     transition: ease .3s;
+ }
+ .h-s-105:hover {
+     transform: scale(1.05);
+ }
