@@ -1,10 +1,14 @@
 <?php
 
-$login = false;
+if(isset($_SESSION["user_id"])){
+     $login = true;
+}else{
+     $login = false;
+}
 
 ?>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="z-index: 100;">
      <div class="container-fluid bg-body-tertiary d-flex align-items-center>
           <a class="navbar-brand d-flex align-items-center" href="#">
                <div class="d-flex align-items-center">
@@ -28,20 +32,40 @@ $login = false;
                     </li>
                </ul> -->
 
-               <?php if($login){ ?>
+               <?php if($login && $_SESSION["user_role"] == "admin"){ ?>
 
                <div class="btn-group">
                     <button type="button" class="border border-0 bg-body-tertiary " data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                          <img src="./src/icon/user.jpg" class="nav-img shadow-lg" alt="User Profile Icon">
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end mt-2 p-0">
-                         <li><p class="m-1 px-3 py-1 text-center fs-5">User12343647</p></li>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 p-0"><li>
+                         <p class="m-1 px-3 py-1 text-center fs-5"><?php echo $_SESSION["user_fname"]; ?></p></li>
                          <hr class="hr p-0 m-0" />
-                         <li class="position-relative"><p class="my-1 px-5 text-center ">$130.75</p><a href="" class=" position-absolute top-50 translate-middle" style="right:1%"><i class="h-r-90 fa-solid fa-plus"></i></a></li>
+                         <li class="position-relative"><p class="my-1 px-5 text-center font-monospace">$<?php echo $_SESSION["user_bal"]; ?></p><a href="./deposit.php" class=" position-absolute top-50 translate-middle" style="right:1%"><i class="h-r-90 fa-solid fa-plus"></i></a></li>
                          <hr class="hr p-0 m-0" />
-                         <li><button class="dropdown-item" type="button">History</button></li>
-                         <li><button class="dropdown-item" type="button">Balance</button></li>
-                         <li><button class="dropdown-item" type="button">Logout</button></li>
+                         <li><a href="./history.php" class="dropdown-item py-1 text-center" >History</a></li>
+                         <li><a href="./deposit.php" class="dropdown-item py-1 text-center" >Deposit</a></li>
+                         <li><a href="./pin.php" class="dropdown-item py-1 text-center" >Change pin</a></li>
+                         <li><a href="./admin/ad_index.php" class="dropdown-item py-1 text-center" >Admin page</a></li>
+                         <li><a href="./action/logout.php" class="dropdown-item py-1 text-center" >Logout</a></li>
+                    </ul>
+               </div>
+
+               <?php }else if($login){ ?>
+
+                    <div class="btn-group">
+                    <button type="button" class="border border-0 bg-body-tertiary " data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                         <img src="./src/icon/user.jpg" class="nav-img shadow-lg" alt="User Profile Icon">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end mt-2 p-0"><li>
+                         <p class="m-1 px-3 py-1 text-center fs-5"><?php echo $_SESSION["user_fname"]; ?></p></li>
+                         <hr class="hr p-0 m-0" />
+                         <li class="position-relative"><p class="my-1 px-5 text-center font-monospace">$<?php echo $_SESSION["user_bal"]; ?></p><a href="./deposit.php" class=" position-absolute top-50 translate-middle" style="right:1%"><i class="h-r-90 fa-solid fa-plus"></i></a></li>
+                         <hr class="hr p-0 m-0" />
+                         <li><a href="./history.php" class="dropdown-item py-1 text-center" >History</a></li>
+                         <li><a href="./deposit.php" class="dropdown-item py-1 text-center" >Deposit</a></li>
+                         <li><a href="./pin.php" class="dropdown-item py-1 text-center" >Change pin</a></li>
+                         <li><a href="./action/logout.php" class="dropdown-item py-1 text-center" >Logout</a></li>
                     </ul>
                </div>
 

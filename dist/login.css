@@ -1,10 +1,52 @@
 body{
      margin: 0;
      padding: 0;
-     height: 100vh;
+     padding-top: 70px;
+     padding-bottom: 20px;
+     min-height: 100vh;
      display: flex;
      justify-content: center;
      align-items: center;
+     flex-direction: column;
 }
 
-.midiv
+.midivborder{
+     border: 1px solid #000;
+     border-radius: 13px;
+     padding: 10px 20px;
+     transition: all .3s;
+     position: relative; /* Make the parent relative only on small screens */
+}
+
+input::placeholder {
+     color: #999; /* Replace with your desired color */
+     opacity: 1; /* Optional: Set opacity for better visibility */
+ }
+
+ .w-40{
+     width: 40%;
+ }
+
+ .w-sm-40{
+     width: 40%;
+ }
+ 
+ .w-sm-60{
+     width: 60%;
+ }
+
+ @media screen and (max-width: 576px){
+     .w-sm-40{
+         width: 100%;
+     }
+     .w-sm-60{
+         width: 100%;
+     }
+ }
+
+
+ @media (max-width: 768px) {
+     .midivborder {
+         position: unset; /* Make the parent relative only on small screens */
+     }
+}

@@ -1,12 +1,13 @@
 <?php
 require_once "./server/connect.php";
 
-if (isset($_SESSION["user_id"])) {
-     header("Location: ./index.php");
-     $_SESSION["error"] = "You are already logged in!";
+if (!isset($_SESSION["user_id"])) {
+     header("Location: ./login.php");
+     $_SESSION["error"] = "Please login first!";
      exit();  // Ensure the script stops after the redirect
  }
- 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,15 +25,24 @@ if (isset($_SESSION["user_id"])) {
 <body>
      
      <?php require_once("./components/alert.php"); ?>
-     <form action="./action/login.php" method="post" class="midivborder d-flex flex-column align-items-center">
+     <form action="./action/setpin.php" method="post" class="midivborder d-flex flex-column align-items-center">
      <a href="./index.php" class=" position-absolute d-block" style="left:15px; top:15px; text-decoration:none; color:black;"><i class="fa-solid fa-chevron-left"></i> Home</a>
-          <p class="fs-2 my-3">Login</p>
-          <div class="mb-3 w-100">
-               <label for="cpass" class="form-label">Email</label>
+          <p class="fs-2 my-3">Pin</p>
+          
+           <div class="mb-3 w-100">
+               <label for="pin" class="form-label ">New pin</label>
                <div class="position-relative">
-                    <input  name="email" required type="text" placeholder="example@mail.com" class="form-control passc" id="cpass" aria-describedby="cpass">
+                    <input  name="pin" required type="password" placeholder="pin must be number 0-9" minlength="6" maxlength="6" class="form-control  pass" id="pin" aria-describedby="pass">
+                    <i class="position-absolute top-50 translate-middle fa-solid fa-eye-slash sp" style="right:1%"></i>
                </div>
+          </div>
 
+          <div class="mb-3 w-100">
+               <label for="cpin" class="form-label ">Confrim pin</label>
+               <div class="position-relative">
+                    <input  name="cpin" required type="password"  minlength="6" maxlength="6" class="form-control  pass" id="cpin" aria-describedby="pass">
+                    <i class="position-absolute top-50 translate-middle fa-solid fa-eye-slash sp" style="right:1%"></i>
+               </div>
           </div>
 
           <div class="mb-3 w-100">
@@ -44,12 +54,12 @@ if (isset($_SESSION["user_id"])) {
                </div>
           </div>
 
-          <button type="submit" name="login" id="" class="btn btn-primary w-100 py-2 my-4">
-               Login
+          <button type="submit" name="setpin" id="" class="btn btn-primary w-100 py-2 my-4">
+               Set pin
           </button>
 
           <div>
-               <p class="text-center mb-1 mx-sm-5 p-0">Not have an account? <a href="./register.php" class="text-decoration-none ">Register</a></p>
+               <p class="text-center mb-1 mx-sm-5 p-0">This is in accordance with the  <a href="https://www.lipsum.com/" class="text-decoration-none ">policy.</a></p>
           </div>
 
 

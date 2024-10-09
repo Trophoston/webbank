@@ -17,6 +17,8 @@
 <body>
 
      <?php require_once("./components/nav.php"); ?>
+
+     <?php require_once("./components/alert.php"); ?>
      
      helloworld
 </body>
