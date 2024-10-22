@@ -40,7 +40,7 @@ if (isset($_SESSION["user_id"])) {
                <div class="position-relative">
                     <input  name="pass" required type="password" class="form-control  pass" id="pass" aria-describedby="pass">
                     <i class="position-absolute top-50 translate-middle fa-solid fa-eye-slash sp" style="right:1%"></i>
-                    <a href="" class="position-absolute " style="right:1%;font-size:13px;text-decoration:none;">Forgot password?</a>
+                    <a href="./register.php" class="position-absolute " style="right:1%;font-size:13px;text-decoration:none;">Forgot password?</a>
                </div>
           </div>
 

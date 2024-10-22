@@ -16,21 +16,6 @@ if(isset($_SESSION["user_id"])){
                     <p class="p-0 ps-1 m-0">WEBBANK <b class=" text-danger">Admin</b></p>
                </div>
           </a>
-          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse  " id="navbarText">
-               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                         <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="#">Pricing</a>
-                    </li>
-               </ul> -->
 
                <?php if($login){ ?>
 
@@ -43,8 +28,8 @@ if(isset($_SESSION["user_id"])){
                          <hr class="hr p-0 m-0" />
                          <li class="position-relative"><p class="my-1 px-5 text-center font-monospace">$<?php echo $_SESSION["user_bal"]; ?></p><a href="../deposit.php" class=" position-absolute top-50 translate-middle" style="right:1%"><i class="h-r-90 fa-solid fa-plus"></i></a></li>
                          <hr class="hr p-0 m-0" />
-                         <li><a href="../history.php" class="dropdown-item py-1 text-center" >Add user</a></li>
-                         <li><a href="../deposit.php" class="dropdown-item py-1 text-center" >View user</a></li>
+                         <li><a href="./ad_adduser.php" class="dropdown-item py-1 text-center" >Add user</a></li>
+                         <li><a href="./ad_viewuser.php" class="dropdown-item py-1 text-center" >View user</a></li>
                          <li><a href="../pin.php" class="dropdown-item py-1 text-center" >Change pin</a></li>
                          <li><a href="../index.php" class="dropdown-item py-1 text-center" >User page</a></li>
                          <li><a href="../action/logout.php" class="dropdown-item py-1 text-center" >Logout</a></li>

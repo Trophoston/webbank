@@ -1,4 +1,10 @@
+@font-face {
+     font-family: line;
+     src: url("../plugin/font/WOFF/LINESeedSansTH_W_Rg.woff") format("woff");
+}
+
 body{
+     font-family: line;
      margin: 0;
      padding: 0;
      padding-top: 70px;

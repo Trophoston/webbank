@@ -1,6 +1,10 @@
 <?php
 
 if(isset($_SESSION["user_id"])){
+     if($_SESSION["user_role"] == "ban"){
+          header("Location: ./ban.php");
+          exit();
+     }
      $login = true;
 }else{
      $login = false;

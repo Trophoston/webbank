@@ -1,7 +1,7 @@
 <?php require_once("../server/connect.php");
 
 if (($_SESSION["user_role"] != "admin")) { 
-     header("Location: ./index.php");
+     header("Location: ../index.php");
      exit();  // Ensure the script stops after the redirect
 }
 
