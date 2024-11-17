@@ -46,8 +46,31 @@ if(isset($_SESSION["user_id"])){
                          <p class="m-1 px-3 py-1 text-center fs-5"><?php echo $_SESSION["user_fname"]; ?></p></li>
                          <hr class="hr p-0 m-0" />
                          <li class="position-relative"><p class="my-1 px-5 text-center font-monospace">$<?php echo $_SESSION["user_bal"]; ?></p><a href="./deposit.php" class=" position-absolute top-50 translate-middle" style="right:1%"><i class="h-r-90 fa-solid fa-plus"></i></a></li>
+                         <hr class="hr p-0 m-0" /><li class="position-relative">
+                              <p class="my-1 px-5 text-center font-monospace"><?php echo $_SESSION["user_secid"]; ?></p><a id="coppysec" class=" position-absolute top-50 translate-middle" style="right:1%"><i class="fa-regular fa-copy"></i></a>
+                         </li>
+
+                         <script>
+                              //user security id copy by add event lisenter to the coppysec id
+                              document.getElementById("coppysec").addEventListener("click", function() {
+                                   var copyText = document.createElement("input");
+                                   copyText.value = "<?php echo $_SESSION["user_secid"]; ?>";
+                                   document.body.appendChild(copyText);
+                                   copyText.select();
+                                   document.execCommand("copy");
+                                   document.body.removeChild(copyText);
+
+                                   Swal.fire({
+                                        title: "Copied!",
+                                        text: "Your id has been copied",
+                                        icon: "success",
+                                   });
+                              });
+                         </script>
+
                          <hr class="hr p-0 m-0" />
                          <li><a href="./history.php" class="dropdown-item py-1 text-center" >History</a></li>
+                         <li><a href="./transfer.php" class="dropdown-item py-1 text-center" >Transfer</a></li>
                          <li><a href="./deposit.php" class="dropdown-item py-1 text-center" >Deposit</a></li>
                          <li><a href="./pin.php" class="dropdown-item py-1 text-center" >Change pin</a></li>
                          <li><a href="./admin/ad_index.php" class="dropdown-item py-1 text-center" >Admin page</a></li>
@@ -65,8 +88,31 @@ if(isset($_SESSION["user_id"])){
                          <p class="m-1 px-3 py-1 text-center fs-5"><?php echo $_SESSION["user_fname"]; ?></p></li>
                          <hr class="hr p-0 m-0" />
                          <li class="position-relative"><p class="my-1 px-5 text-center font-monospace">$<?php echo $_SESSION["user_bal"]; ?></p><a href="./deposit.php" class=" position-absolute top-50 translate-middle" style="right:1%"><i class="h-r-90 fa-solid fa-plus"></i></a></li>
+                         <hr class="hr p-0 m-0" /><li class="position-relative">
+                              <p class="my-1 px-5 text-center font-monospace"><?php echo $_SESSION["user_secid"]; ?></p><a id="coppysec" class=" position-absolute top-50 translate-middle" style="right:1%"><i class="fa-regular fa-copy"></i></a>
+                         </li>
+
+                         <script>
+                              //user security id copy by add event lisenter to the coppysec id
+                              document.getElementById("coppysec").addEventListener("click", function() {
+                                   var copyText = document.createElement("input");
+                                   copyText.value = "<?php echo $_SESSION["user_secid"]; ?>";
+                                   document.body.appendChild(copyText);
+                                   copyText.select();
+                                   document.execCommand("copy");
+                                   document.body.removeChild(copyText);
+
+                                   Swal.fire({
+                                        title: "Copied!",
+                                        text: "Your id has been copied",
+                                        icon: "success",
+                                   });
+                              });
+                         </script>
+
                          <hr class="hr p-0 m-0" />
                          <li><a href="./history.php" class="dropdown-item py-1 text-center" >History</a></li>
+                         <li><a href="./transfer.php" class="dropdown-item py-1 text-center" >Transfer</a></li>
                          <li><a href="./deposit.php" class="dropdown-item py-1 text-center" >Deposit</a></li>
                          <li><a href="./pin.php" class="dropdown-item py-1 text-center" >Change pin</a></li>
                          <li><a href="./action/logout.php" class="dropdown-item py-1 text-center" >Logout</a></li>

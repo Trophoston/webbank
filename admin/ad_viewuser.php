@@ -11,6 +11,7 @@ $vuser = $obj->readall();
 
 if(isset($_POST["del"])){
      $del = $obj->delete($_POST["id"]);
+     
      if($del){
           header("Location: ./ad_viewuser.php");
           exit();
@@ -56,6 +57,7 @@ if(isset($_POST["del"])){
                          <th scope="col">Email</th>
                          <th scope="col">Balance</th>
                          <th scope="col">Role</th>
+                         <th scope="col">ID(fixed)</th>
                          <th scope="col"></th>
                     </tr>
                </thead>
@@ -74,6 +76,7 @@ if(isset($_POST["del"])){
                               <td><?php echo $vu["u_mail"]; ?></td>
                               <td><?php echo $vu["u_bal"]; ?></td>
                               <td><?php echo $vu["u_role"]; ?></td>
+                              <td><?php echo $vu["u_secid"]; ?></td>
                               <td>
                               <form method="post">
                                    <input type="hidden" name="id" value="<?php echo $vu["u_id"]; ?>">
@@ -90,6 +93,7 @@ if(isset($_POST["del"])){
                </tbody>
           </table>
      </div>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
      <script src="../plugin/bootstrap.bundle.min.js"></script>
 </html>

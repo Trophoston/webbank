@@ -51,6 +51,7 @@ if (isset($_SESSION["user_id"])) {
           </div>
 
           <div class="mb-3 d-flex flex-sm-row flex-column gap-2 align-items-center">
+               
                <div class=" ">
                     <label for="pass" class="form-label ">Password</label>
                     <div class="position-relative">

@@ -27,7 +27,10 @@ if (isset($_POST['register'])) {
      exit();
      }
 
-    $user->create($email, $password, $fname, $lname, $tell);
+     //secid is random number between 1-3 and alphabet A-Z
+     $secid = rand(1,9).chr(rand(80,90)).chr(rand(85,90)).chr(rand(70,90)).rand(1,9).chr(rand(70,90)).chr(rand(70,90));
+
+    $user->create($email, $password, $fname, $lname, $tell , $secid);
      $_SESSION["success"] = "Account created!";
      
      $his = new His_class();

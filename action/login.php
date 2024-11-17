@@ -28,6 +28,7 @@ if (isset($_POST['login'])) {
     $_SESSION["user_bal"] = $row['u_bal'];
     $_SESSION["user_pin"] = $row['u_pin'];
      $_SESSION["user_pass"] = $row['u_pass'];
+     $_SESSION["user_secid"] = $row['u_secid'];
 
     header("Location: ../index.php");
     exit();

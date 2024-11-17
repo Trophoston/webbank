@@ -17,7 +17,7 @@ if (($_SESSION["user_role"] != "admin")) {
      <link rel="stylesheet" href="../plugin/bootstrap.css">
      <link rel="stylesheet" href="../dist/public.css">
      
-     <script src="https://kit.fontawesome.com/027e1ff7fd.js" crossorigin="anonymous"></script>
+     
 </head>
 <body>
 
@@ -28,4 +28,12 @@ if (($_SESSION["user_role"] != "admin")) {
      helloworld
 </body>
      <script src="../plugin/bootstrap.bundle.min.js"></script>
+     <script src="https://kit.fontawesome.com/027e1ff7fd.js" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script>
+          import Swal from 'sweetalert2'
+
+// or via CommonJS
+          const Swal = require('sweetalert2')
+     </script>
 </html>
