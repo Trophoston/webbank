@@ -69,6 +69,7 @@ if(isset($_SESSION["user_id"])){
                          </script>
 
                          <hr class="hr p-0 m-0" />
+                         <li><a href="./home.php" class="dropdown-item py-1 text-center" >Home</a></li>
                          <li><a href="./history.php" class="dropdown-item py-1 text-center" >History</a></li>
                          <li><a href="./transfer.php" class="dropdown-item py-1 text-center" >Transfer</a></li>
                          <li><a href="./deposit.php" class="dropdown-item py-1 text-center" >Deposit</a></li>

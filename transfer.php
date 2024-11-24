@@ -28,13 +28,13 @@ if($_SESSION["user_pin"] == null){
 <body>
      
      <?php require_once("./components/alert.php"); ?>
-     <form action="./action/" method="post" class="midivborder d-flex flex-column align-items-center parent">
+     <form action="./action/transfer_a.php" method="post" class="midivborder d-flex flex-column align-items-center parent">
      <a href="./index.php" class=" position-absolute d-block" style="left:15px; top:15px; text-decoration:none; color:black;"><i class="fa-solid fa-chevron-left"></i> Home</a>
           <p class="fs-2 my-3">Tranfer</p>
 
           <div class="mb-3 w-100">
-               <label for="tell" class="form-label ">Receiver</label>
-               <input name="tell" required type="text" placeholder="myfriend@a.phone" class="form-control " id="tell" aria-describedby="Tell">
+               <label for="reciver" class="form-label ">Receiver</label>
+               <input name="reciver" required type="text" minlength="7" maxlength="7" placeholder="0XXX00X" class="form-control " id="tell" aria-describedby="Tell">
           </div>
 
           <div class="mb-3 w-100">
@@ -54,7 +54,7 @@ if($_SESSION["user_pin"] == null){
                </div>
           </div>
 
-          <button type="submit" name="deposit" id="" class="btn btn-primary w-100 py-2 my-4">
+          <button type="submit" name="transfer" id="" class="btn btn-primary w-100 py-2 my-4">
                Deposit
           </button>
 

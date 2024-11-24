@@ -24,6 +24,17 @@ if (($_SESSION["user_role"] != "admin")) {
      <?php require_once("./ad_components/ad_nav.php"); ?>
 
      <?php require_once("./ad_components/ad_alert.php"); ?>
+
+     <div class="container mt-3">
+          <div class="row">
+               <div class="col-12">
+                    <h1 class="text-center">Welcome to Admin Page</h1>
+               </div>
+
+               <div>
+                    
+               </div>
+          </div>
      
      helloworld
 </body>

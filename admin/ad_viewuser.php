@@ -32,7 +32,7 @@ if(isset($_POST["del"])){
      
      <script src="https://kit.fontawesome.com/027e1ff7fd.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="overflow-x-scroll">
 
      <?php require_once("./ad_components/ad_nav.php"); ?>
 
@@ -41,11 +41,8 @@ if(isset($_POST["del"])){
      <p class="fs-2 text-center p-3">View user <a href="./ad_adduser.php" class="btn btn-primary m-3">Add user&nbsp;&nbsp;<i class="h-r-90 fa-solid fa-plus"></i></a></p>
 
      
-     <div class=" container ">
-          
-     
-
-          <table class="table table-hover table-sm">
+     <div class=" container  ">
+          <table class="table table-hover table-sm w-100">
                <thead>
                     <tr>
                          <th scope="col">#</th>

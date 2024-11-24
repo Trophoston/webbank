@@ -51,8 +51,8 @@ $history = $obj->readuser($_SESSION["user_id"]);
                          <tr>
                               <th scope="row"><?php echo $i; ?></th>
                               <td><?php echo $his["h_type"]; ?></td>
-                              <td><?php echo $his["h_num"]; ?></td>
-                              <td><?php echo $his["h_balance"]; ?></td>
+                              <td>$<?php echo $his["h_num"]; ?></td>
+                              <td>$<?php echo $his["h_balance"]; ?></td>
                               <td><?php echo $his["h_time"]; ?></td>
                          </tr>
                     <?php

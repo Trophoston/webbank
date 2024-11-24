@@ -1,5 +1,6 @@
 <?php require_once("../server/connect.php");
 require_once("../function/userfunc.php");
+require_once("../function/historyfunc.php");
 
 if (($_SESSION["user_role"] != "admin")) { 
      header("Location: ../index.php");
@@ -13,6 +14,15 @@ if(isset($_POST["adduser"])){
      //id email password fname lname tell role bal pin
      $secid = rand(1,9).chr(rand(80,90)).chr(rand(85,90)).chr(rand(70,90)).rand(1,9).chr(rand(70,90)).chr(rand(70,90));
      $update = $obj->createadmin($_POST["email"], $_POST["password"], $_POST["fname"], $_POST["lname"], $_POST["tell"], $_POST["role"], $_POST["bal"], $_POST["pin"],$secid);
+
+     if($update){
+          $his = new His_class();
+          $result = $his->create($obj->reademail($_POST["email"])["u_id"], "Account created", $_POST["bal"], $_POST["bal"]);
+
+          header("Location: ./ad_viewuser.php");
+          exit();
+     }
+
      header("Location: ./ad_viewuser.php");
      exit();
 }
